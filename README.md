@@ -128,19 +128,26 @@ python main.py
 ```
 This script runs the complete pipeline: dataset loading, EDA, training over 10 epochs, saving `tb_xray_model.keras`, and generating all 9 evaluation plots.
 
-**Option B: Single-Image Clinical Inference Demo (`predict.py`)**
-Run instant inference on any chest X-ray image (ideal for live project presentations):
+**Option B: Desktop Graphical User Interface (GUI — Recommended for Live Viva)**
+Run the native, zero-dependency desktop application:
+```bash
+python app_gui.py
+```
+Provides one-click X-ray selection, real-time Grad-CAM lesion heatmap overlay, confidence bar chart, and automated clinical triage priority.
+
+**Option C: Single-Image Inference with Grad-CAM (`predict.py`)**
+Run instant inference on any chest X-ray image (outputs terminal report and 3-panel figure with Grad-CAM):
 ```bash
 # Predict on a random test sample:
 python predict.py
 
 # Or predict on a specific X-ray image:
-python predict.py --image dataset/TB/Tuberculosis-1.png
-python predict.py --image dataset/Normal/Normal-1.png
+python predict.py --image dataset/TB/Tuberculosis-10.png
+python predict.py --image dataset/Normal/Normal-2572.png
 ```
-This prints the diagnostic classification, probability confidence score, and generates a visual diagnostic figure in `plots/single_prediction.png`.
+This prints the diagnostic classification, probability confidence score, triage priority, and generates a visual diagnostic figure in `plots/single_prediction.png`.
 
-**Option C: Modular Execution**
+**Option D: Modular Execution**
 ```bash
 python 01_eda.py          # Exploratory Data Analysis & distribution plots
 python 02_preprocessing.py  # Data loading & augmentation verification
@@ -183,17 +190,22 @@ Please refer to the comprehensive [06_ethics.md](06_ethics.md) report.
 
 ---
 
-## 👥 Team Members
+## 📑 Review 3 (Final Review — 60 Marks) Deliverables
 
-| Name | registration number |
-| :--- | :--- | :--- |
-| *Ishan Choudhary* | 25BCE10753 |
-| *Khush Gupta* | 25BCE10038 |
-| *Vidit Choudhary* |25BCE10749 |
-| *Saransh Mathur*| 25BCE10354 |
-| *Somya Bhardwaj*| 25BCE10409 |
+- **Academic Capstone Report (20 Marks):** [`FINAL_PROJECT_REPORT.md`](FINAL_PROJECT_REPORT.md) — 12-chapter comprehensive project report adhering to IEEE formatting.
+- **Project Outcome (5 Marks):** [`PROJECT_OUTCOME.md`](PROJECT_OUTCOME.md) — Quantitative outcomes, clinical triage benchmark, and confusion matrix breakdown.
+- **Conclusion & Future Scope (5 Marks):** [`CONCLUSION_AND_FUTURE_SCOPE.md`](CONCLUSION_AND_FUTURE_SCOPE.md) — Research conclusions, limitations, and future roadmap (Edge AI & Federated Learning).
+- **Presentation & Team Coordination (5 Marks):** [`PRESENTATION_AND_TEAM_GUIDE.md`](PRESENTATION_AND_TEAM_GUIDE.md) — 12-slide layout for PPT and 5-person speaking script with viva Q&A cheat sheet.
+- **Implementation & Live Demonstration (25 Marks):** [`app_gui.py`](app_gui.py) (Desktop GUI) and [`predict.py`](predict.py) with Grad-CAM Explainable AI.
+
 ---
 
-## 📄 License
+## 👥 Team Members
 
-This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
+| Name | Registration Number |
+| :--- | :--- |
+| Ishan Choudhary | 25BCE10753 |
+| Khush Gupta | 25BCE10038 |
+| Vidit Choudhary | 25BCE10749 |
+| Saransh Mathur | 25BCE10354 |
+| Somya Bhardwaj | 25BCE10409 |
